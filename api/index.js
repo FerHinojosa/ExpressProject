@@ -15,7 +15,7 @@ const config = {
 };
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 /*const whitelist = ['http://localhost:8080', 'https://MyAppFer.com']
@@ -30,7 +30,7 @@ const options = {
 }*/
 app.use(cors());
 
-app.get("/", (req, res) => {
+app.get("api/", (req, res) => {
     res.send("Hola este es mi servidor Express.");
 });
 
